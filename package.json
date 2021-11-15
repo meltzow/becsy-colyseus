@@ -1,12 +1,10 @@
 {
   "name": "becsy-colyseus",
   "version": "0.1.0",
-  "type": "module",
-  "main": "index.umd.js",
-  "module": "index.js",
   "description": "try using becsy with with colyseus",
   "scripts": {
-    "client:dev": "vite",
+    "dev:client": "vite",
+    "dev:server": "node --loader ts-node/esm.mjs --experimental-top-level-await src/index.ts",
     "start": "ts-node-dev --respawn --transpile-only src/index.ts",
     "loadtest": "colyseus-loadtest loadtest/example.ts --room my_room --numClients 2",
     "build": "npm run clean && tsc && node node_modules/copyfiles/copyfiles package.json ./lib && node node_modules/copyfiles/copyfiles arena.env ./lib",
@@ -33,6 +31,7 @@
     "@colyseus/arena": "^0.14.22",
     "@colyseus/monitor": "^0.14.20",
     "@lastolivegames/becsy": "^0.9.1",
+    "@types/node": "^16.11.7",
     "colyseus": "^0.14.20",
     "cors": "^2.8.5",
     "esm": "^3.2.25",

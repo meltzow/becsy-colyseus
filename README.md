@@ -1,8 +1,16 @@
-# Welcome to Colyseus!
+# Welcome to becsy-colyseus!
+
+This project want to use [becsy](https://github.com/LastOliveGames/becsy) with [colyseus](https://github.com/colyseus/colyseus) to have an entity-component-system with network support.  
 
 This project has been created using [⚔️ `create-colyseus-app`](https://github.com/colyseus/create-colyseus-app/) - an npm init template for kick starting a Colyseus project in TypeScript.
 
 [Documentation](http://docs.colyseus.io/)
+
+## install
+```
+git clone git@github.com:meltzow/becsy-colyseus.git
+yarn
+```
 
 ## :crossed_swords: Usage
 

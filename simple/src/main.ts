@@ -131,14 +131,19 @@ import { Room } from 'colyseus';
   }
 }
 
+
+let world;
+async function createWorld() {
 // We can now create the world that all our entities and their components will live in.  All system
 // and component classes tagged with `@system` and `@component` will be automatically added to the
 // world's `defs`, and in this case we don't need to add any other types manually.
-const world = await World.create();
+  world = await World.create();
 
 // Now we create the entity that will represent our object and add the components it will need.
 // Each component type can be optionally followed by an object with initial field values.
-world.createEntity(Position, Velocity, DOMRenderable, {node: document.getElementById('object')});
+  world.createEntity(Position, Velocity, DOMRenderable, {node: document.getElementById('object')});
+}
+
 
 // Finally, we set up our game loop.  The `run` function will be executed once per frame.
 async function run() {
@@ -148,5 +153,6 @@ async function run() {
   // Continue the loop on the next animation frame.
   requestAnimationFrame(run);
 }
+createWorld();
 // Kick things off with our first frame!
 requestAnimationFrame(run);
